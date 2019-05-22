@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
+"""
+author: song.yanlin
+mail: hanxiao2100@qq.com
+"""
 
 from django.db import models
 from ...basic_model import BasicModel
