@@ -61,38 +61,56 @@ class GetChoices(object):
         choices = self._gen_choices(search_key)
         return choices
 
-    def  disk_type_options(self):
+    def  disk_type_choices(self):
         """
         硬盘介质类型选项
         :return:
         """
-        search_key = "disk_type_options"
+        search_key = "disk_type_choices"
         choices = self._gen_choices(search_key)
         return choices
 
-    def memory_type_options(self):
+    def memory_type_choices(self):
         """
         内存类型选项
         :return:
         """
-        search_key = "memory_type_options"
+        search_key = "memory_type_choices"
         choices = self._gen_choices(search_key)
         return choices
 
-    def disk_form_factor_options(self):
+    def disk_form_factor_choices(self):
         """
         硬盘规格选项
         :return:
         """
-        search_key = "disk_form_factor_options"
+        search_key = "disk_form_factor_choices"
         choices = self._gen_choices(search_key)
         return choices
 
-    def disk_interface_options(self):
+    def disk_interface_choices(self):
         """
         硬盘接口类型选项
         :return:
         """
-        search_key = "disk_interface_options"
+        search_key = "disk_interface_choices"
+        choices = self._gen_choices(search_key)
+        return choices
+
+    def os_choices(self):
+        """
+        OS选项
+        :return:
+        """
+        search_key = "os_choices"
+        choices = self._gen_choices(search_key)
+        return choices
+    
+    def physical_machine_model_choices(self):
+        """
+        物理机型号选项
+        :return:
+        """
+        search_key = "physical_machine_model_choices"
         choices = self._gen_choices(search_key)
         return choices

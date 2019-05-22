@@ -18,7 +18,6 @@ class Organization(BasicModel):
     name = models.CharField(max_length=128, verbose_name="组织名称")
     parent_id = models.IntegerField(default=None, null=True, blank=True, verbose_name="父组织ID")
 
-origin_type_choices = BasicConfig.objects.get(name="origin_type_choices")
 
 
 
