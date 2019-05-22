@@ -4,7 +4,7 @@
 
 from django.db import models
 from ...basic_model import BasicModel
-from .utils import GetChoices
+from ...utils import GetChoices
 
 class Origin(BasicModel):
     """

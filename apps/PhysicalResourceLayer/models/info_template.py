@@ -5,7 +5,7 @@
 from django.db import models
 from ...basic_model import BasicModel
 import uuid
-from .utils import GetChoices
+from ...utils import GetChoices
 
 class CpuInfoTemplate(BasicModel):
     """

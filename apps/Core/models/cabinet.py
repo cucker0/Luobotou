@@ -6,7 +6,7 @@ from django.db import models
 from ...basic_model import BasicModel
 from .origin import Origin
 from .organization import Organization
-from .utils import GetChoices
+from ...utils import GetChoices
 
 class Cabinet(BasicModel):
     """

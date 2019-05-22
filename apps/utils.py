@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 
-from .basic_config import BasicConfig
+from .Core.models.basic_config import BasicConfig
 import json
 
 class GetChoices(object):
