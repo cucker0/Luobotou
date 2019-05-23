@@ -7,14 +7,15 @@ mail: hanxiao2100@qq.com
 """
 
 from django.db import models
-from ...basic_model import BasicModel
+from ..common.basic_model import BasicModel
+from ..common.utils import GenId
 
 class User(BasicModel):
     """
     用户，包含各种系统用户
     """
+    id = models.CharField(max_length=36, default=GenId().user(), primary_key=True, unique=True)
     name = models.CharField(max_length=64, verbose_name="用户名")
-    global_id = models.CharField(max_length=36, verbose_name="全局ID")
     password = models.CharField(max_length=64, verbose_name="密码")
     role = models.CharField(max_length=64, verbose_name="角色")
     status = models.CharField(max_length=6, verbose_name="用户状态")

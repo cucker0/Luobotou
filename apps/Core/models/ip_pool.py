@@ -7,15 +7,15 @@ mail: hanxiao2100@qq.com
 """
 
 from django.db import models
-from ...basic_model import BasicModel
-import uuid
+from ..common.basic_model import BasicModel
+from ..common.utils import GenId
 
 class IpPool(BasicModel):
     """
     IP池
     """
+    id = models.CharField(max_length=36, default=GenId().ip_pool(), primary_key=True, unique=True)
     ip = models.GenericIPAddressField(verbose_name="IP")
-    global_id = models.UUIDField(uuid.uuid4, unique=True, verbose_name="全局ID")
     netmask = models.CharField(max_length=64, null=True, blank=True, verbose_name="子网掩码")
     business_type = models.CharField(max_length=32, verbose_name="业务类型")
     is_ipv6 = models.CharField(max_length=8, verbose_name="是IPv6")

@@ -7,13 +7,15 @@ mail: hanxiao2100@qq.com
 """
 
 from django.db import models
-from ...basic_model import BasicModel
-from ...utils import GetChoices
+from ..common.basic_model import BasicModel
+from ..common.utils import GenId
+from ..common.model_utils import GetChoices
 
 class Origin(BasicModel):
     """
     机房
     """
+    id = models.CharField(max_length=36, default=GenId().origin(), primary_key=True, unique=True)
     name = models.CharField(max_length=64, verbose_name="机房")
     address = models.CharField(max_length=255, verbose_name="地址")
     type = models.SmallIntegerField(default=0, choices=GetChoices().origin_type_choices(), verbose_name="机房类型")

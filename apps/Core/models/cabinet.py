@@ -7,15 +7,17 @@ mail: hanxiao2100@qq.com
 """
 
 from django.db import models
-from ...basic_model import BasicModel
+from ..common.basic_model import BasicModel
 from .origin import Origin
 from .organization import Organization
-from ...utils import GetChoices
+from ..common.model_utils import GetChoices
+from ..common.utils import GenId
 
 class Cabinet(BasicModel):
     """
     机柜
     """
+    id = models.CharField(max_length=36, default=GenId().cabinet(), primary_key=True, unique=True)
     name = models.CharField(max_length=64, verbose_name="机柜标识")
     origin = models.ForeignKey(Origin, on_delete=models.PROTECT, verbose_name="所属机房")
     organization = models.ForeignKey(Organization, on_delete=models.PROTECT, verbose_name="所属组织")

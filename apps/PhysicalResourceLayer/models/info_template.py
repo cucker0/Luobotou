@@ -7,9 +7,9 @@ mail: hanxiao2100@qq.com
 """
 
 from django.db import models
-from ...basic_model import BasicModel
+from ...Core.common.basic_model import BasicModel
 import uuid
-from ...utils import GetChoices
+from ...Core.common.model_utils import GetChoices
 
 class CpuInfoTemplate(BasicModel):
     """
@@ -32,7 +32,7 @@ class MemoryInfoTemplate(BasicModel):
     model = models.CharField(max_length=64, unique=True, verbose_name="型号")
     global_id = models.UUIDField(default=uuid.uuid4, unique=True, verbose_name="全局ID")
     brand = models.CharField(max_length=32, verbose_name="品牌")
-    type = models.CharField(max_length=16, choices=GetChoices().memory_type_options(), verbose_name="内存类型")
+    type = models.CharField(max_length=16, choices=GetChoices().memory_type_choices(), verbose_name="内存类型")
     capacity = models.IntegerField(verbose_name="容量(int)，单位:GB")
     frequency = models.IntegerField(verbose_name="频率(int)，单位:MHz")
     voltage = models.SmallIntegerField(verbose_name="电压(smallint)，单位:v")
@@ -46,10 +46,10 @@ class DiskInfoTemplate(BasicModel):
     global_id = models.UUIDField(default=uuid.uuid4, unique=True, verbose_name="全局ID")
     model = models.CharField(max_length=64, unique=True, verbose_name="型号")
     brand = models.CharField(max_length=32, verbose_name="品牌")
-    type = models.CharField(max_length=32, choices=GetChoices().disk_type_options(), verbose_name="介质类型(Media Type)")
+    type = models.CharField(max_length=32, choices=GetChoices().disk_type_choices(), verbose_name="介质类型(Media Type)")
     capacity = models.IntegerField(verbose_name="容量(int)，单位:GB")
-    form_factor = models.CharField(max_length=32, choices=GetChoices().disk_form_factor_options(), verbose_name="规格")
-    interface = models.CharField(max_length=32, choices=GetChoices().disk_interface_options(), verbose_name="接口类型")
+    form_factor = models.CharField(max_length=32, choices=GetChoices().disk_form_factor_choices(), verbose_name="规格")
+    interface = models.CharField(max_length=32, choices=GetChoices().disk_interface_choices(), verbose_name="接口类型")
     sequential_read = models.IntegerField(null=True, blank=True, verbose_name="最高顺序读取速度(int)，单位:MB/s")
     sequential_write = models.IntegerField(null=True, blank=True, verbose_name="最高顺序写入速度(int)，单位:MB/s")
     random_read = models.IntegerField(null=True, blank=True, verbose_name="最高随机读取速度(int)，单位:IOPS")
