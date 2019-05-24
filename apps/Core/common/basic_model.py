@@ -3,7 +3,6 @@
 #
 
 from django.db import models
-import uuid
 
 class BasicModel(models.Model):
     """

@@ -8,16 +8,15 @@ mail: hanxiao2100@qq.com
 
 from django.db import models
 from ..common.basic_model import BasicModel
-from ..common.utils import GenId
+from ..common import generate_id
 
 class PortPool(BasicModel):
     """
     port池
     """
-    id = models.CharField(max_length=36, default=GenId().port_pool(), primary_key=True, unique=True)
+    id = models.CharField(max_length=36, default=generate_id.port_pool, primary_key=True, unique=True)
     port = models.IntegerField(verbose_name="端口")
     protocol = models.CharField(max_length=32, verbose_name="协议")
-    global_id = models.CharField(max_length=36, verbose_name="全局ID")
     use_object = models.CharField(max_length=64, verbose_name="使用对象")
     status = models.CharField(max_length=8, verbose_name="是在使用状态")
 
