@@ -22,4 +22,4 @@ class BasicConfig(BasicModel):
     category = models.CharField(max_length=64, verbose_name="类别")
     key = models.CharField(max_length=64, verbose_name="key")
     value = models.CharField(max_length=5120, verbose_name="值")
-    index = models.IntegerField(verbose_name="序号", unique=True)
+    index = models.IntegerField(verbose_name="序号(int)", unique=True)

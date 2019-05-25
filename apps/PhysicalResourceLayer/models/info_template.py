@@ -17,12 +17,12 @@ class CpuInfoTemplate(BasicModel):
     id = models.CharField(max_length=36, default=generate_id.cpu_info_template, primary_key=True, unique=True)
     model = models.CharField(max_length=64, unique=True, verbose_name="型号")
     brand = models.CharField(max_length=32, verbose_name="品牌")
-    number_of_cores = models.SmallIntegerField(verbose_name="核心数")
-    number_of_threads = models.SmallIntegerField(verbose_name="线程数")
+    number_of_cores = models.SmallIntegerField(verbose_name="核心数(smallint)")
+    number_of_threads = models.SmallIntegerField(verbose_name="线程数(smallint)")
     base_frequency = models.FloatField(verbose_name="基本频率(float),单位:GHz")
-    max_frequency = models.FloatField(null=True, blank=True, verbose_name="最大睿频频率,单位:GHz")
-    cache = models.CharField(null=True, blank=True, max_length=64, verbose_name="缓存(JSON格式)")
-    index = models.SmallIntegerField(unique=True, verbose_name="序号")
+    max_frequency = models.FloatField(null=True, blank=True, verbose_name="最大睿频频率(float),单位:GHz")
+    cache = models.CharField(null=True, blank=True, max_length=64, verbose_name="缓存(json)")
+    index = models.SmallIntegerField(unique=True, verbose_name="序号(smallint)")
 
 class MemoryInfoTemplate(BasicModel):
     """
@@ -35,7 +35,7 @@ class MemoryInfoTemplate(BasicModel):
     capacity = models.IntegerField(verbose_name="容量(int)，单位:GB")
     frequency = models.IntegerField(verbose_name="频率(int)，单位:MHz")
     voltage = models.SmallIntegerField(verbose_name="电压(smallint)，单位:v")
-    index = models.SmallIntegerField(unique=True, verbose_name="序号")
+    index = models.SmallIntegerField(unique=True, verbose_name="序号(smallint)")
 
 class DiskInfoTemplate(BasicModel):
     """

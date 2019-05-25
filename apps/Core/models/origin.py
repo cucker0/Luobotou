@@ -19,6 +19,6 @@ class Origin(BasicModel):
     address = models.CharField(max_length=255, verbose_name="地址")
     type = models.SmallIntegerField(default=0, verbose_name="机房类型")
     bandwidth = models.IntegerField(default=0, verbose_name="带宽(int)，单位:Mbps")
-    network_info = models.CharField(max_length=255, verbose_name="网络信息")
-    contact_info = models.CharField(max_length=255, verbose_name="联系信息")
+    network_info = models.CharField(max_length=255, verbose_name="网络信息(json)")
+    contact_info = models.CharField(max_length=255, verbose_name="联系信息(json)")
 
