@@ -126,3 +126,12 @@ def disk_info_template():
     prefix = "011"
     id = _gen_id(prefix)
     return id
+
+def server():
+    """
+    Server id
+    :return:
+    """
+    prefix = "012"
+    id = _gen_id(prefix)
+    return id
