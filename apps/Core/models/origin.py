@@ -15,10 +15,10 @@ class Origin(BasicModel):
     机房
     """
     id = models.CharField(max_length=36, default=generate_id.origin, primary_key=True, unique=True)
-    name = models.CharField(max_length=64, verbose_name="机房")
-    address = models.CharField(max_length=255, verbose_name="地址")
-    type = models.SmallIntegerField(default=0, verbose_name="机房类型")
+    name = models.CharField(max_length=64, verbose_name="机房名")
+    address = models.CharField(max_length=255, null=True, blank=True, verbose_name="地址")
+    type = models.SmallIntegerField(default=0, verbose_name="机房类型(smallint)")
     bandwidth = models.IntegerField(default=0, verbose_name="带宽(int)，单位:Mbps")
-    network_info = models.CharField(max_length=255, verbose_name="网络信息(json)")
-    contact_info = models.CharField(max_length=255, verbose_name="联系信息(json)")
+    network_info = models.CharField(max_length=255, null=True, blank=True, verbose_name="网络信息(json)")
+    contact_info = models.CharField(max_length=255, null=True, blank=True, verbose_name="联系信息(json)")
 

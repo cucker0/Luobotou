@@ -16,9 +16,9 @@ class PortPool(BasicModel):
     """
     id = models.CharField(max_length=36, default=generate_id.port_pool, primary_key=True, unique=True)
     port = models.IntegerField(verbose_name="端口(int)")
-    protocol = models.CharField(max_length=32, verbose_name="协议")
-    use_object = models.CharField(max_length=64, verbose_name="使用对象")
-    status = models.CharField(max_length=8, verbose_name="是在使用状态")
+    protocol = models.CharField(max_length=32, default="tcp", verbose_name="协议")
+    use_object = models.CharField(max_length=64, null=True, blank=True, verbose_name="使用对象")
+    status = models.CharField(max_length=8, default="false", verbose_name="是在使用状态")
 
     class Meta:
         # 联合约束

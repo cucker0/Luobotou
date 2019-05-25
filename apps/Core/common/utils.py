@@ -98,3 +98,51 @@ class GenId(object):
         prefix = "008"
         id = self._gen_id(prefix)
         return id
+
+def make_aware_datetime(strptime, time_zone=None):
+    """
+    把字符串时间转换成aware datetime(带时区信息格式的时间)
+    :param strptime: 字符串时间(str)，如"2019-05-25 17:37:23"
+    :param time_zone: 时区(str)，如"Asia/Shanghai" , "UTC"
+    :return: aware_datetime
+    """
+    from django.utils import timezone
+    import pytz
+    import datetime
+
+    naive_datetime = datetime.datetime.strptime(strptime, '%Y-%m-%d %H:%M:%S')
+
+    if time_zone:
+        try:
+            tz = pytz.timezone(time_zone)
+        except Exception as e:
+            tz = pytz.timezone("UTC")
+        aware_datetime = timezone.make_aware(naive_datetime, timezone=tz)
+    else: # 使用settings中设置的TIME_ZONE
+        aware_datetime = timezone.make_aware(naive_datetime)
+    return aware_datetime
+
+def make_aware_datetime_v2(strptime, time_zone=None):
+    """
+    把字符串时间转换成aware datetime(带时区信息格式的时间) v2
+    :param strptime: 字符串时间(str)，如"2019-05-25 17:37:23"
+    :param time_zone: 时区(str)，如"Asia/Shanghai" , "UTC"
+    :return: aware_datetime
+    """
+    import pytz
+    import datetime
+    from django.conf import settings
+
+    naive_datetime = datetime.datetime.strptime(strptime, '%Y-%m-%d %H:%M:%S')
+    print("naive_datetime", naive_datetime)
+    if time_zone:
+        try:
+            tz = pytz.timezone(time_zone)
+        except Exception as e:
+            tz = pytz.timezone("UTC")
+    else: # 使用settings中设置的TIME_ZONE
+        # tz = pytz.timezone("UTC")
+        tz = pytz.timezone(settings.TIME_ZONE)
+    aware_datetime = naive_datetime.replace(tzinfo=tz)
+    return aware_datetime
+
