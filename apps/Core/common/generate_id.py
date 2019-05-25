@@ -135,3 +135,12 @@ def server():
     prefix = "012"
     id = _gen_id(prefix)
     return id
+
+def network_device():
+    """
+    NetworkDevice id
+    :return:
+    """
+    prefix = "013"
+    id = _gen_id(prefix)
+    return id

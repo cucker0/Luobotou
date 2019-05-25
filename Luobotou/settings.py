@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Core',
     'PhysicalResourceLayer',
-    'ComputingResourceLayer'
+    'ComputingResourceLayer',
+    'NetworkResourceLayer'
 ]
 
 MIDDLEWARE = [
