@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'Core',
     'PhysicalResourceLayer',
     'ComputingResourceLayer',
-    'NetworkResourceLayer'
+    'NetworkResourceLayer',
+    'ApplicationResourceLayer',
 ]
 
 MIDDLEWARE = [

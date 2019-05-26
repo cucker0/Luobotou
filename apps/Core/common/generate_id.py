@@ -144,3 +144,13 @@ def network_device():
     prefix = "013"
     id = _gen_id(prefix)
     return id
+
+def application():
+    """
+    Application id
+    :return:
+    """
+    prefix = "014"
+    id = _gen_id(prefix)
+    return id
+
