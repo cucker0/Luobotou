@@ -159,6 +159,15 @@ def app_instance():
     AppInstance id
     :return:
     """
-    prefix = "014"
+    prefix = "015"
+    id = _gen_id(prefix)
+    return id
+
+def third_party_service_management():
+    """
+    ThirdPartyServiceManagement id
+    :return:
+    """
+    prefix = "016"
     id = _gen_id(prefix)
     return id
