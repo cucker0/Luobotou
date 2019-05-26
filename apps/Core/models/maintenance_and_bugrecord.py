@@ -15,9 +15,9 @@ class MaintenanceAndBugRecord(BasicModel):
     维修和BUG记录
     """
     id = models.CharField(max_length=36, default=generate_id.maintenance_and_bugrecord, primary_key=True)
-    brief = models.CharField(max_length=128, verbose_name="故障摘要")
-    object = models.CharField(max_length=512, verbose_name="故障对象")
-    start_time = models.DateTimeField(auto_now_add=True, verbose_name="故障开始时间")
-    detaile = models.CharField(max_length=255, null=True, blank=True, verbose_name="故障祥情")
-    type = models.CharField(max_length=32, verbose_name="故障类型")
-    fault_processing = models.CharField(max_length=512, null=True, blank=True, verbose_name="处理处理")
+    brief = models.CharField(max_length=128, verbose_name="故障/BUG摘要")
+    object = models.CharField(max_length=512, verbose_name="故障/BUG对象")
+    start_time = models.DateTimeField(auto_now_add=True, verbose_name="故障/BUG开始时间")
+    detaile = models.CharField(max_length=255, null=True, blank=True, verbose_name="故障/BUG祥情")
+    type = models.CharField(max_length=32, verbose_name="故障/BUG类型")
+    fault_processing = models.CharField(max_length=512, null=True, blank=True, verbose_name="故障/BUG处理")
