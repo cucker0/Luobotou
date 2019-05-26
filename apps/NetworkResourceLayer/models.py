@@ -21,7 +21,7 @@ class NetworkDevice(BasicModel):
     location = models.CharField(max_length=128, null=True, blank=True, verbose_name="位置")
     online_time = models.DateTimeField(auto_now_add=True, verbose_name="上架时间")
     offline_time = models.DateTimeField(auto_now_add=True, verbose_name="下架时间")
-    status = models.CharField(max_length=8, default="oneline" ,verbose_name="状态")
+    status = models.CharField(max_length=16, default="oneline" ,verbose_name="状态")
     purchase_date = models.DateField(auto_now_add=True, verbose_name="购买日期")
     warranty_info = models.CharField(max_length=512, null=True, blank=True, verbose_name="保修信息")
     other_info = models.CharField(max_length=2048, null=True, blank=True, verbose_name="其他信息")
