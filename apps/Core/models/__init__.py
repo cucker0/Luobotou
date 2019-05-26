@@ -8,3 +8,4 @@ from .ip_pool import *
 from .port_pool import *
 from .user import *
 from .third_party_service_management import *
+from .manufacturer import Manufacturer

@@ -189,3 +189,12 @@ def office_dvice():
     prefix = "018"
     id = _gen_id(prefix)
     return id
+
+def manufacturer():
+    """
+    Manufacturer id
+    :return:
+    """
+    prefix = "019"
+    id = _gen_id(prefix)
+    return id
