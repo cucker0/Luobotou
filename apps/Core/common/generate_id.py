@@ -171,3 +171,12 @@ def third_party_service_management():
     prefix = "016"
     id = _gen_id(prefix)
     return id
+
+def ssl_certificate():
+    """
+    ThirdPartyServiceManagement id
+    :return:
+    """
+    prefix = "017"
+    id = _gen_id(prefix)
+    return id
