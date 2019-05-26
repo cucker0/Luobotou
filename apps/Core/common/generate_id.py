@@ -198,3 +198,12 @@ def manufacturer():
     prefix = "019"
     id = _gen_id(prefix)
     return id
+
+def maintenance_and_bugrecord():
+    """
+    MaintenanceAndBugRecord id
+    :return:
+    """
+    prefix = "020"
+    id = _gen_id(prefix)
+    return id
