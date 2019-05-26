@@ -10,3 +10,4 @@ from .user import *
 from .third_party_service_management import *
 from .manufacturer import Manufacturer
 from .maintenance_and_bugrecord import *
+from .stock import *

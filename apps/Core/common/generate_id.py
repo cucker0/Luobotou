@@ -207,3 +207,12 @@ def maintenance_and_bugrecord():
     prefix = "020"
     id = _gen_id(prefix)
     return id
+
+def stock():
+    """
+    Stock id
+    :return:
+    """
+    prefix = "021"
+    id = _gen_id(prefix)
+    return id
