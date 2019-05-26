@@ -216,3 +216,12 @@ def stock():
     prefix = "021"
     id = _gen_id(prefix)
     return id
+
+def fault_record():
+    """
+    FaultRecord id
+    :return:
+    """
+    prefix = "022"
+    id = _gen_id(prefix)
+    return id
