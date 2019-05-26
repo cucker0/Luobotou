@@ -180,3 +180,12 @@ def ssl_certificate():
     prefix = "017"
     id = _gen_id(prefix)
     return id
+
+def office_dvice():
+    """
+    OfficeDvice id
+    :return:
+    """
+    prefix = "018"
+    id = _gen_id(prefix)
+    return id
