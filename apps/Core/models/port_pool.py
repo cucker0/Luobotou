@@ -14,7 +14,7 @@ class PortPool(BasicModel):
     """
     port池
     """
-    id = models.CharField(max_length=36, default=generate_id.port_pool, primary_key=True, unique=True)
+    id = models.CharField(max_length=36, default=generate_id.port_pool, primary_key=True)
     port = models.IntegerField(verbose_name="端口(int)")
     protocol = models.CharField(max_length=32, default="tcp", verbose_name="协议")
     use_object = models.CharField(max_length=64, null=True, blank=True, verbose_name="使用对象")

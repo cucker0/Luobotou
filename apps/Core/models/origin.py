@@ -14,7 +14,7 @@ class Origin(BasicModel):
     """
     机房
     """
-    id = models.CharField(max_length=36, default=generate_id.origin, primary_key=True, unique=True)
+    id = models.CharField(max_length=36, default=generate_id.origin, primary_key=True)
     name = models.CharField(max_length=64, verbose_name="机房名")
     address = models.CharField(max_length=255, null=True, blank=True, verbose_name="地址")
     type = models.SmallIntegerField(default=0, verbose_name="机房类型(smallint)")

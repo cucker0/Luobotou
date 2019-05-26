@@ -14,7 +14,7 @@ class IpPool(BasicModel):
     """
     IP池
     """
-    id = models.CharField(max_length=36, default=generate_id.ip_pool, primary_key=True, unique=True)
+    id = models.CharField(max_length=36, default=generate_id.ip_pool, primary_key=True)
     ip = models.GenericIPAddressField(verbose_name="IP")
     netmask = models.CharField(max_length=64, null=True, blank=True, verbose_name="子网掩码")
     business_type = models.CharField(max_length=32, null=True, blank=True, verbose_name="业务类型")

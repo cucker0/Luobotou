@@ -18,7 +18,7 @@ class User(BasicModel):
     """
     用户，包含各种系统用户
     """
-    id = models.CharField(max_length=36, default=generate_id.user, primary_key=True, unique=True)
+    id = models.CharField(max_length=36, default=generate_id.user, primary_key=True)
     name = models.CharField(max_length=64, verbose_name="用户名")
     password = models.CharField(max_length=64, null=True, blank=True, verbose_name="密码")
     role = models.CharField(max_length=64, null=True, blank=True, verbose_name="角色")

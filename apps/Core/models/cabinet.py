@@ -17,7 +17,7 @@ class Cabinet(BasicModel):
     """
     机柜
     """
-    id = models.CharField(max_length=36, default=generate_id.cabinet, primary_key=True, unique=True)
+    id = models.CharField(max_length=36, default=generate_id.cabinet, primary_key=True)
     name = models.CharField(max_length=64, verbose_name="机柜标识")
     origin = models.ForeignKey(Origin, null=True, blank=True, on_delete=models.PROTECT, verbose_name="所属机房")
     organization = models.ForeignKey(Organization, null=True, blank=True, on_delete=models.PROTECT, verbose_name="所属组织")

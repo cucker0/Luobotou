@@ -9,7 +9,7 @@ class Server(BasicModel):
     """
     服务器
     """
-    id = models.CharField(max_length=36, default=generate_id.server, primary_key=True, unique=True)
+    id = models.CharField(max_length=36, default=generate_id.server, primary_key=True)
     name = models.CharField(max_length=64, unique=True, verbose_name="服务器名")
     type = models.CharField(max_length=64, verbose_name="服务器类型")
     os = models.CharField(max_length=64, verbose_name="操作系统")

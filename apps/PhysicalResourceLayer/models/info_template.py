@@ -14,7 +14,7 @@ class CpuInfoTemplate(BasicModel):
     """
     CPU信息模板
     """
-    id = models.CharField(max_length=36, default=generate_id.cpu_info_template, primary_key=True, unique=True)
+    id = models.CharField(max_length=36, default=generate_id.cpu_info_template, primary_key=True)
     model = models.CharField(max_length=64, unique=True, verbose_name="型号")
     brand = models.CharField(max_length=32, verbose_name="品牌")
     number_of_cores = models.SmallIntegerField(null=True, blank=True, verbose_name="核心数(smallint)")
@@ -28,7 +28,7 @@ class MemoryInfoTemplate(BasicModel):
     """
     内存信息模板
     """
-    id = models.CharField(max_length=36, default=generate_id.memory_info_template, primary_key=True, unique=True)
+    id = models.CharField(max_length=36, default=generate_id.memory_info_template, primary_key=True)
     model = models.CharField(max_length=64, unique=True, verbose_name="型号")
     brand = models.CharField(max_length=32, verbose_name="品牌")
     type = models.CharField(max_length=16, verbose_name="内存类型")
@@ -41,7 +41,7 @@ class DiskInfoTemplate(BasicModel):
     """
     硬盘信息模样
     """
-    id = models.CharField(max_length=36, default=generate_id.disk_info_template, primary_key=True, unique=True)
+    id = models.CharField(max_length=36, default=generate_id.disk_info_template, primary_key=True)
     lable = models.CharField(max_length=64, unique=True, verbose_name="标识")
     model = models.CharField(max_length=64, null=True, blank=True, verbose_name="型号")
     brand = models.CharField(max_length=32, verbose_name="品牌")

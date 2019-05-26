@@ -9,7 +9,7 @@ class NetworkDevice(BasicModel):
     """
     网络设备
     """
-    id = models.CharField(max_length=36, default=generate_id.network_device, primary_key=True, unique=True)
+    id = models.CharField(max_length=36, default=generate_id.network_device, primary_key=True)
     name = models.CharField(max_length=64, unique=True, verbose_name="设备名")
     type = models.CharField(max_length=64, verbose_name="设备类型")
     model = models.CharField(max_length=64, null=True, blank=True, verbose_name="型号")

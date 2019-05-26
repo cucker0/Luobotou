@@ -16,7 +16,7 @@ class BasicConfig(BasicModel):
     """
     基本配置
     """
-    id = models.CharField(max_length=36, default=generate_id.basic_config, primary_key=True, unique=True)
+    id = models.CharField(max_length=36, default=generate_id.basic_config, primary_key=True)
     name = models.CharField(max_length=64, unique=True, verbose_name="配置名称(字母与_组成)")
     display = models.CharField(max_length=64, unique=True, verbose_name="显示配置名称")
     category = models.CharField(max_length=64, null=True, blank=True, verbose_name="类别")

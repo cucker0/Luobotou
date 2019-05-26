@@ -16,7 +16,7 @@ class PhysicalMachine(BasicModel):
     """
     物理机
     """
-    id = models.CharField(max_length=36, default=generate_id.physical_machine, primary_key=True, unique=True)
+    id = models.CharField(max_length=36, default=generate_id.physical_machine, primary_key=True)
     sn = models.CharField(max_length=32, unique=True, verbose_name="序列号")
     asset_id = models.CharField(max_length=128, null=True, blank=True, verbose_name="资产编号")
     model = models.CharField(max_length=64, verbose_name="型号")
