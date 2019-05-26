@@ -154,3 +154,11 @@ def application():
     id = _gen_id(prefix)
     return id
 
+def app_instance():
+    """
+    AppInstance id
+    :return:
+    """
+    prefix = "014"
+    id = _gen_id(prefix)
+    return id

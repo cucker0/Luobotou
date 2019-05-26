@@ -7,3 +7,4 @@ mail: hanxiao2100@qq.com
 """
 
 from .Application import *
+from .AppInstance import *
